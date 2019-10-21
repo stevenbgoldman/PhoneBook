@@ -2,10 +2,11 @@ package phoneBook;
 
 public class Address
 {
-	private String streetAddress;
-	private String city;
-	private String state;
-	private int zipCode;
+	protected String streetAddress;
+	protected String city;
+	protected String state;
+	protected String zipCode;
+
 	
 	
 	public Address() 
@@ -13,7 +14,7 @@ public class Address
 				
 	}
 
-	public Address(String streetAddress, String city, String state, int zipCode)
+	public Address(String streetAddress, String city, String state, String zipCode)
 	{
 		this.streetAddress = streetAddress;
 		this.city = city;
@@ -60,11 +61,11 @@ public class Address
 	{
 		this.state = state;
 	}
-	public int getZipCode()
+	public String getZipCode()
 	{
 		return zipCode;
 	}
-	public void setZipCode(int zipCode)
+	public void setZipCode(String zipCode)
 	{
 		this.zipCode = zipCode;
 	}

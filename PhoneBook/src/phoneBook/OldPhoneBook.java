@@ -1,24 +1,14 @@
 package phoneBook;
 
-public class PhoneBook
+public class OldPhoneBook extends Person
 {	
-	protected Person[] = new Person[0];
+	protected Person [] people = new Person[0];
 	protected int uniquePersonId;
 
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	public int getUniquePersonId()
 	{
