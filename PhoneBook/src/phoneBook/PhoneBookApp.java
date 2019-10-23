@@ -1,7 +1,9 @@
 package phoneBook;
 
 import java.util.*;
-	
+	/* There can be dulicate phone numbers that would cause the update menu not to work. Also on the menus there is nothing to catch
+	 * if the menu selections are type in wrong.
+	 */
 	public class PhoneBookApp
 	{	
 		public static Person[] persons = new Person[0];
