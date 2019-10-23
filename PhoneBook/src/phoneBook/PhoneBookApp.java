@@ -35,7 +35,7 @@ import java.util.*;
 									"9 Exit");
 
 				selection = ScrInt.nextInt();
-				MainMenuy(selection);
+				MainMenu(selection);
 
 			} while (selection != 9);
 
@@ -43,27 +43,27 @@ import java.util.*;
 			System.out.println("Exited Program, Good Bye!");
 		}
 
-		public static void MainMenuy(int key)
+		public static void MainMenu(int key)
 		{
-			int arrayposition = -1;
+			int arrayPos = -1;
 			switch (key)
 			{
 			case 1:// Add a Person to the Phone Book
 				System.out.println(" ");
-				Person person = new Person(AddUserString());
+				Person person = new Person(AddUser());
 				CpyExpandPerson(person);
 				System.out.println(" ");
 				break;
 			case 2:// Delete Phone Book entry
-				arrayposition = SelectPerson();
-				DeletePersonFromPhoneBook(arrayposition);
+				arrayPos = SelectPerson();
+				DeletePerson(arrayPos);
 				break;
 			case 3:// Update Phone Book entries
-				arrayposition = SelectPerson();
-				UpdateMenuLoop(arrayposition);
+				arrayPos = SelectPerson();
+				UpdateMenu(arrayPos);
 				break;
 			case 4:// Search Phone Book entries
-				SearchMenuLoop(arrayposition);
+				SearchMenu(arrayPos);
 			case 5://List of all entries in the phone Book
 				ShowAllPersons();
 				break;
@@ -78,7 +78,7 @@ import java.util.*;
 
 		}
 		
-		public static void UpdateMenuLoop(int arrayposition)
+		public static void UpdateMenu(int arrayPos)
 		{
 
 
@@ -97,7 +97,7 @@ import java.util.*;
 									"9 Exit the Person's Update Menu");
 
 				updateSelection = ScrInt.nextInt();
-				UpdateMenu(updateSelection, arrayposition);
+				UpdateMenu(updateSelection, arrayPos);
 
 			} while (updateSelection != 9);
 
@@ -106,7 +106,7 @@ import java.util.*;
 		}
 		
 		
-		public static void UpdateMenu(int key, int arrayposition)
+		public static void UpdateMenu(int key, int arrayPos)
 		{
 			
 			switch (key)
@@ -114,58 +114,58 @@ import java.util.*;
 			case 1:// Update First Name
 				System.out.println(" ");
 				String updatedString = NewUpdateString();
-				persons[arrayposition].setFirstName(updatedString);
+				persons[arrayPos].setFirstName(updatedString);
 				System.out.println(" ");
-				System.out.println(persons[arrayposition].toString());
+				System.out.println(persons[arrayPos].toString());
 				break;
 			case 2:// Update Middle Name
 				System.out.println(" ");
 				updatedString = NewUpdateString();
-				persons[arrayposition].setMiddleName(updatedString);
+				persons[arrayPos].setMiddleName(updatedString);
 				System.out.println(" ");
-				System.out.println(persons[arrayposition].toString());
+				System.out.println(persons[arrayPos].toString());
 				break;
 			case 3:// Update Last Name
 				System.out.println(" ");
 				updatedString = NewUpdateString();
-				persons[arrayposition].setLastName(updatedString);
+				persons[arrayPos].setLastName(updatedString);
 				System.out.println(" ");
-				System.out.println(persons[arrayposition].toString());
+				System.out.println(persons[arrayPos].toString());
 				break;
 			case 4:// Update Telephone Number
 				System.out.println(" ");
 				updatedString = NewUpdateString();
-				persons[arrayposition].setPhoneNumber(updatedString);
+				persons[arrayPos].setPhoneNumber(updatedString);
 				System.out.println(" ");
-				System.out.println(persons[arrayposition].toString());
+				System.out.println(persons[arrayPos].toString());
 				break;
 			case 5:// Update Street
 				System.out.println(" ");
 				updatedString = NewUpdateString();
-				persons[arrayposition].getAddress().setStreetAddress(updatedString);
+				persons[arrayPos].getAddress().setStreetAddress(updatedString);
 				System.out.println(" ");
-				System.out.println(persons[arrayposition].toString());
+				System.out.println(persons[arrayPos].toString());
 				break;
 			case 6:// Update City
 				System.out.println(" ");
 				updatedString = NewUpdateString();
-				persons[arrayposition].getAddress().setCity(updatedString);
+				persons[arrayPos].getAddress().setCity(updatedString);
 				System.out.println(" ");
-				System.out.println(persons[arrayposition].toString());
+				System.out.println(persons[arrayPos].toString());
 				break;
 			case 7:// Update State
 				System.out.println(" ");
 				updatedString = NewUpdateString();
-				persons[arrayposition].getAddress().setState(updatedString);
+				persons[arrayPos].getAddress().setState(updatedString);
 				System.out.println(" ");
-				System.out.println(persons[arrayposition].toString());
+				System.out.println(persons[arrayPos].toString());
 				break;
 			case 8:// Update Zip
 				System.out.println(" ");
 				updatedString = NewUpdateString();
-				persons[arrayposition].getAddress().setZipCode(updatedString);
+				persons[arrayPos].getAddress().setZipCode(updatedString);
 				System.out.println(" ");
-				System.out.println(persons[arrayposition].toString());
+				System.out.println(persons[arrayPos].toString());
 				break;
 			case 9:// Exit
 
@@ -177,7 +177,7 @@ import java.util.*;
 
 		}
 		
-		public static void SearchMenuLoop(int arrayposition)
+		public static void SearchMenu(int arrayPos)
 		{
 
 
@@ -191,10 +191,10 @@ import java.util.*;
 									"4 Search by Person's Telephone Number\n" +
 									"5 Search by Person's City\n" +
 									"6 Search by Person's State\n" +
-									"9 Exit the Person's Update Menu");
+									"9 Exit the Update Menu");
 
 				searchSelection = ScrInt.nextInt();
-				SearchMenu(searchSelection, arrayposition);
+				SearchMenu(searchSelection, arrayPos);
 
 			} while (searchSelection != 9);
 
@@ -203,7 +203,7 @@ import java.util.*;
 		}
 		
 		
-		public static void SearchMenu(int key, int arrayposition)
+		public static void SearchMenu(int key, int arrayPos)
 		{
 			
 			switch (key)
@@ -211,37 +211,37 @@ import java.util.*;
 			case 1:// Search First Name
 				System.out.println(" ");
 				String searchString = SearchString();
-				SearchbyFirstName(searchString);
+				SrchLastName(searchString);
 				System.out.println(" ");
 				break;
 			case 2:// Search Last Name
 				System.out.println(" ");
 				searchString = SearchString();
-				SearchbyLastName(searchString);
+				SearchLastName(searchString);
 				System.out.println(" ");
 				break;
 			case 3:// Search Full Name
 				System.out.println(" ");
 				searchString = SearchString();
-				SearchbyFullName(searchString);
+				SrchCity(searchString);
 				System.out.println(" ");
 				break;
 			case 4:// Search Telephone Number
 				System.out.println(" ");
 				searchString = SearchString();
-				SearchbyPhoneNumber(searchString);
+				SrchPhoneNumber(searchString);
 				System.out.println(" ");
 				break;
 			case 5:// Search City
 				System.out.println(" ");
 				searchString = SearchString();
-				SearchbyCity(searchString);
+				SrchState(searchString);
 				System.out.println(" ");
 				break;
 			case 6:// Search State
 				System.out.println(" ");
 				searchString = SearchString();
-				SearchbyState(searchString);
+				SrchState(searchString);
 				System.out.println(" ");
 				break;
 			case 9:// Exit
@@ -254,7 +254,7 @@ import java.util.*;
 
 		}
 		
-		public static String AddUserString()
+		public static String AddUser()
 		{
 			String addUserString = "";
 
@@ -288,13 +288,13 @@ import java.util.*;
 		
 		public static void CpyExpandPerson(Person person)
 		{
-			Person[] newarray = new Person[persons.length+1];
+			Person[] tempArray = new Person[persons.length+1];
 			for(int i=0;i<persons.length;i++)
 			{
-				newarray[i]=persons[i];
+				tempArray[i]=persons[i];
 			}
-			newarray[newarray.length-1] = person;
-			persons = newarray;
+			tempArray[tempArray.length-1] = person;
+			persons = tempArray;
 			
 			System.out.print("Added to Phone Book: ");
 			System.out.print(person.toString());
@@ -327,9 +327,6 @@ import java.util.*;
 			
 			for (int i = 0; i < persons.length; i++)
 			{
-//				System.out.println(i);
-//				System.out.println(persons[i].getTelephone());
-//				System.out.println(telephone);
 				if(telephone.equals(persons[i].getPhoneNumber())) 
 					{personsarrayindexvalue=i;}
 			}
@@ -337,22 +334,22 @@ import java.util.*;
 			
 		}
 		
-		public static void DeletePersonFromPhoneBook(int arrayposition)
+		public static void DeletePerson(int arrayPos)
 
 		{
-			Person[] newarray = new Person[persons.length-1];
+			Person[] tempArray = new Person[persons.length-1];
 			for(int i=0;i<persons.length;i++)
 			{
-				if(i<arrayposition)
+				if(i<arrayPos)
 					{
-					newarray[i]=persons[i];
+					tempArray[i]=persons[i];
 					}
-				if(i>arrayposition)
+				if(i>arrayPos)
 				{
-				newarray[i-1]=persons[i];
+				tempArray[i-1]=persons[i];
 				}
 			}
-			persons = newarray;
+			persons = tempArray;
 			
 			System.out.print("Person Deleted from Phone Book ");
 			ShowAllPersons();
@@ -360,7 +357,7 @@ import java.util.*;
 			
 		}
 		
-		public static void SearchbyFirstName(String string)
+		public static void SrchFirstName(String string)
 		{
 			int counter =0;
 			for(int i=0;i<persons.length;i++)
@@ -378,7 +375,7 @@ import java.util.*;
 			}
 		}
 		
-		public static void SearchbyLastName(String string)
+		public static void SrchLastName(String string)
 		{
 			int counter =0;
 			for(int i=0;i<persons.length;i++)
@@ -396,7 +393,7 @@ import java.util.*;
 			}
 		}
 		
-		public static void SearchbyFullName(String string)
+		public static void SrchFullName(String string)
 		{
 			int counter =0;
 			for(int i=0;i<persons.length;i++)
@@ -414,7 +411,7 @@ import java.util.*;
 			}
 		}
 		
-		public static void SearchbyPhoneNumber(String string)
+		public static void SrchPhoneNumber(String string)
 		{
 			int counter =0;
 			for(int i=0;i<persons.length;i++)
@@ -432,7 +429,7 @@ import java.util.*;
 			}
 		}
 		
-		public static void SearchbyCity(String string)
+		public static void SrchCity(String string)
 		{
 			int counter =0;
 			for(int i=0;i<persons.length;i++)
@@ -450,7 +447,7 @@ import java.util.*;
 			}
 		}
 		
-		public static void SearchbyState(String string)
+		public static void SrchState(String string)
 		{
 			int counter =0;
 			for(int i=0;i<persons.length;i++)
