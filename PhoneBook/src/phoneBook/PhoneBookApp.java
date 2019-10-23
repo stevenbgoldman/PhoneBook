@@ -211,13 +211,13 @@ import java.util.*;
 			case 1:// Search First Name
 				System.out.println(" ");
 				String searchString = SearchString();
-				SrchLastName(searchString);
+				SrchFirstName(searchString);
 				System.out.println(" ");
 				break;
 			case 2:// Search Last Name
 				System.out.println(" ");
 				searchString = SearchString();
-				SearchLastName(searchString);
+				SrchLastName(searchString);
 				System.out.println(" ");
 				break;
 			case 3:// Search Full Name
